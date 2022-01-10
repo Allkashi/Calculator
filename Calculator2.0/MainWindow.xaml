@@ -26,7 +26,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="textBox1" Grid.ColumnSpan="4" TextAlignment="Right" VerticalContentAlignment="Center" FontSize="35" Text="{Binding Count}"></TextBox>
+        <Viewbox Grid.ColumnSpan="4" HorizontalAlignment="Right">
+            <Label x:Name="textBox1" FontSize="35" Content="{Binding Count}"></Label>
+        </Viewbox>
 
         <Button Grid.Column="0" Grid.Row="2" Background="AntiqueWhite" Command="{Binding GetButtonValue}" CommandParameter="1">
             <TextBlock Text="1"/>
@@ -115,6 +117,26 @@
 
     <Window.InputBindings>
         <KeyBinding Key="NumPad1" Command="{Binding GetButtonValue}" CommandParameter="1" />
+        <KeyBinding Key="NumPad2" Command="{Binding GetButtonValue}" CommandParameter="2" />
+        <KeyBinding Key="NumPad3" Command="{Binding GetButtonValue}" CommandParameter="3" />
+        <KeyBinding Key="NumPad4" Command="{Binding GetButtonValue}" CommandParameter="4" />
+        <KeyBinding Key="NumPad5" Command="{Binding GetButtonValue}" CommandParameter="5" />
+        <KeyBinding Key="NumPad6" Command="{Binding GetButtonValue}" CommandParameter="6" />
+        <KeyBinding Key="NumPad7" Command="{Binding GetButtonValue}" CommandParameter="7" />
+        <KeyBinding Key="NumPad8" Command="{Binding GetButtonValue}" CommandParameter="8" />
+        <KeyBinding Key="NumPad9" Command="{Binding GetButtonValue}" CommandParameter="9" />
+        <KeyBinding Key="NumPad0" Command="{Binding GetButtonValue}" CommandParameter="0" />
+
+        <KeyBinding Key="D9" Modifiers="Shift" Command="{Binding GetButtonValue}" CommandParameter="("/>
+        <KeyBinding Key="D0" Modifiers="Shift" Command="{Binding GetButtonValue}" CommandParameter=")"/>
+
+        <KeyBinding Key="Divide" Command="{Binding GetButtonValue}" CommandParameter="/" />
+        <KeyBinding Key="Multiply" Command="{Binding GetButtonValue}" CommandParameter="*" />
+        <KeyBinding Key="Subtract" Command="{Binding GetButtonValue}" CommandParameter="-" />
+        <KeyBinding Key="Add" Command="{Binding GetButtonValue}" CommandParameter="+" />
+        <KeyBinding Key="Enter" Command="{Binding Count}"/>
+        <KeyBinding Key="C" Command="{Binding Delete}"/>
+        <KeyBinding Key="Backspace" Command="{Binding Erase}"/>
     </Window.InputBindings>
 
 </Window>
